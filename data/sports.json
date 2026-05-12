@@ -16,7 +16,7 @@
         "bienfaits": "Améliore l’équilibre, renforce les jambes et procure des supers sensations de glisse.",
         "saisonIdeale": "Le ski se pratique principalement l'hiver, une fois que la neige fait son apparition."
       },
-      "miniJeu": "ski.js"
+      "miniJeu": "../js/games/ski.js"
     },
 
     {
@@ -34,7 +34,7 @@
         "bienfaits": "Améliore l’endurance, renforce le cœur et les muscles des jambes.",
         "saisonIdeale": "Le trail est une activité qui peut s'effectuer toute l'année mais l'hiver, la neige peut compliquer la pratique en montagne."
       },
-      "miniJeu": "trail.js"
+      "miniJeu": "../js/games/trail.js"
     },
 
     {
@@ -52,7 +52,7 @@
         "bienfaits": "Renforce les bras et le dos et améliore la souplesse.",
         "saisonIdeale": "L'escalade se pratique toute l’année. Les voies les plus en altitudes ne sont pas conseillées l'hiver."
       },
-      "miniJeu": "escalade.js"
+      "miniJeu": "../js/games/escalade.js"
     },
 
     {
@@ -70,7 +70,7 @@
         "bienfaits": "Améliore l’endurance, renforce le cœur et les muscles des jambes.",
         "saisonIdeale": "Le vélo se pratique toute l'année quand les conditions le permettent. Si la météo n'est pas favorable, il est aussi possible d'utiliser un home trainer pour tourner les jambes chez soi."
       },
-      "miniJeu": "veloRoute.js"
+      "miniJeu": "../js/games/veloRoute.js"
     }
 
   ]

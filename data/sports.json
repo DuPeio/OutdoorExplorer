@@ -4,6 +4,7 @@
     {
       "name": "Ski alpin",
       "image": "assets/illustrations/ski.jpg",
+      "alt": "person skiing",
       "personage": "assets/personnages/ski.png",
       "badge": "assets/badges/badge_ski.svg",
       "description": "Découvre le ski : glisse sur des pistes enneigées en pleine nature.\n\nPrêt à essayer le mini-jeu slalom ?",
@@ -22,6 +23,7 @@
     {
       "name": "Trail",
       "image": "assets/illustrations/trail.jpg",
+      "alt": "person running in the mountains",
       "personage": "assets/personnages/trail.png",
       "badge": "assets/badges/badge_trail.svg",
       "description": "Découvre le trail : cours sur des chemins en pleine nature et dépasse tes limites.\n\nPrêt à essayer le mini-jeu de trail ?",
@@ -40,6 +42,7 @@
     {
       "name": "Escalade",
       "image": "assets/illustrations/escalade.jpg",
+      "alt": "person climbing outside",
       "personage": "assets/personnages/escalade.png",
       "badge": "assets/badges/badge_escalade.svg",
       "description": "Découvre l’escalade : grimpe des parois et développe ta force.\n\nPrêt à essayer le mini-jeu d’escalade ?",
@@ -58,6 +61,7 @@
     {
       "name": "Vélo de route",
       "image": "assets/illustrations/velo_route.jpg",
+      "alt": "person biking in the moutains",
       "personage": "assets/personnages/velo_route.png",
       "badge": "assets/badges/badge_velo_route.svg",
       "description": "Découvre le vélo de route : roule sur de longues distances et améliore ton endurance.\n\n Prêt à essayer le mini-jeu de vélo de route ?",

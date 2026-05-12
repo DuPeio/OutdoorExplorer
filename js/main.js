@@ -8,7 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+let isOpen = false;
 
-function openBook(){
-    return true;
+function openBook() {
+    if (isOpen)return;
+    isOpen = true;
+    document.getElementById('cover-title').classList.add('hidden');
+    document.getElementById('img-front-page').classList.add('hidden');
 }

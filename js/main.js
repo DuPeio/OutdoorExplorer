@@ -1,10 +1,9 @@
-let current_page = 0
-
+let current_page = 3
 document.addEventListener('DOMContentLoaded', () => {
     // Pour les anneaux du livre
     const rings = document.getElementById('rings');
     if (rings) {
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 18; i++) {
             const ring = document.createElement('div');
             ring.className = 'ring';
             rings.appendChild(ring);
@@ -16,8 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
         let sport = sports[current_page]
         if(sport) {
             const sport_name = document.getElementById('sport');
-            if (sport_name) {
+            const sport_name_container = document.getElementById('container');
+            if (sport_name && sport_name_container) {
                 sport_name.innerHTML = sport.name;
+                sport_name.style.backgroundImage = `url(${sport.image})`;
+                sport_name_container.style.backgroundImage = `url(${sport.image})`;
             }
 
             const illustration = document.getElementById('illustration');

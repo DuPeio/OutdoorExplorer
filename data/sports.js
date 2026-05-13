@@ -57,7 +57,7 @@ const sports = [
     },
 
     {
-      "name": "Vélo de route",
+      "name": "Velo route",
       "image": "assets/illustrations/velo_route.jpg",
       "alt": "person biking in the moutains",
       "personage": "assets/personnages/velo_route.png",

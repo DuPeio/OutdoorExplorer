@@ -14,8 +14,8 @@ body{
 
 .scene {
     perspective: 1400px;
-    width: 1000px;
-    height: 750px;
+    width: 1100px;
+    height: 850px;
     position: relative;
 }
 
@@ -79,14 +79,14 @@ body{
     transform-style: preserve-3d;
     transform: translateZ(0px);
     justify-content: flex-start;
-    padding-top: 23px;
-    gap: 17px;
+    padding-top: 21px;
+    gap: 18px;
 }
 
 .ring {
-    width: 30px;
-    height: 20px;
-    border: 2.5px solid #dabe12;
+    width: 40px;
+    height: 30px;
+    border: 4px solid #dabe12;
     border-radius: 0 0 12px 12px;
     border-top: none;
     z-index: 3;
@@ -250,7 +250,48 @@ button:hover{
     transform: rotate(30deg);
     position : absolute;
     left: 10px;
-    top: 50%;
+    top: 40%;
+}
+
+.sport-name-container {
+    container-type: inline-size;
+    height: 40%;
+    width: 95%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    margin-top: -50px;
+}
+
+.sport-name {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 400%;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 8px;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: invert(1);
+}
+
+.description{
+    padding : 30px;
+    justify-content: center;
+    text-align: center;
 }
 
 

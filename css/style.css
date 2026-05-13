@@ -245,4 +245,12 @@ button:hover{
     padding : 0;
 }
 
+.badge{
+    width: 20%;
+    transform: rotate(30deg);
+    position : absolute;
+    left: 10px;
+    top: 50%;
+}
+
 

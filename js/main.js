@@ -1,8 +1,3 @@
-// const material = document.getElementById('material');
-// const cost = document.getElementById('cost');
-// const benefits = document.getElementById('benefits');
-// const season = document.getElementById('season');
-
 let current_page = 0
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -79,6 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const season = document.getElementById('season');
             if (season) {
                 season.innerHTML = sport.infos.saisonIdeale
+            }
+
+            const badge = document.getElementById('badge');
+            if(badge) {
+                badge.src = sport.badge
             }
         }
 

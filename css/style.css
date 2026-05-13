@@ -75,10 +75,12 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
     margin-top: -3px;
     transform-style: preserve-3d;
     transform: translateZ(0px);
+    justify-content: flex-start;
+    padding-top: 23px;
+    gap: 17px;
 }
 
 .ring {
@@ -87,7 +89,6 @@ body{
     border: 2.5px solid #dabe12;
     border-radius: 0 0 12px 12px;
     border-top: none;
-    flex-shrink: 0;
     z-index: 3;
     transform: translateZ(2px);
 }
@@ -104,13 +105,13 @@ body{
     font-family: 'Playfair Display', serif;
 }
 
-.btn-open.hidden{
-    display: none;
-}
-
 .btn-open:hover{
     background-color: #e1c616;
     box-shadow: 4px 4px 4px #000;
+}
+
+.btn-open.hidden{
+    display: none;
 }
 
 .back-front-page{
@@ -128,11 +129,11 @@ body{
     border: #4e1801 3px dashed;
 }
 
-.connexion-page{
+.right-page{
     position: absolute;
     background-color: #FFFCE5;
     border-radius: 15px;
-    right: 15px;
+    right: 12px;
     top: 12px;
     height: 97%;
     width: 48%;
@@ -143,6 +144,10 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.right-page.hidden{
+    display: none;
 }
 
 .connexion-title{
@@ -202,12 +207,44 @@ body{
     border-radius: 15px;
     cursor: pointer;
     transition: 0.3s;
-
 }
 
 .connexion-form button:hover{
     background-color: #e1c616;
     box-shadow: 4px 4px 4px #000;
+}
+
+.sport-page{
+    justify-content: space-evenly;
+}
+
+.confidential{
+    filter :blur(4px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.left-page{
+    position: absolute;
+    background-color: #FFFCE5;
+    border-radius: 15px;
+    left: 12px;
+    top: 12px;
+    height: 97%;
+    width: 48%;
+    z-index: 2;
+    transform: translateZ(1px);
+    padding : 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.left-page .illustration{
+    height: 40%;
+    width: 95%;
 }
 
 

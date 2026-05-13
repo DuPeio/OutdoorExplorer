@@ -7,7 +7,9 @@
     <title>Outdoor Explorer</title>
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="data/sports.js"></script>
     <script src="./js/main.js"></script>
+
 </head>
 <body>
 
@@ -17,13 +19,14 @@
 
             <!-- Couverture -->
             <div class="front-page">
-                <div class="cover-title" id="cover-title">Outdoor<br>Explorer</div>
-                <img class="img-front-page" id="img-front-page" src="assets/illustrations/montagnes_front_page.svg" alt="Mountains icons">
+                <div class="cover-title hidden" id="cover-title">Outdoor<br>Explorer</div>
+                <img class="img-front-page hidden" id="img-front-page" src="assets/illustrations/montagnes_front_page.svg" alt="Mountains icons">
             </div>
 
             <!-- Derrière de couverture & première page -->
             <div class="back-front-page"></div>
-            <div class="connexion-page">
+
+            <div class="right-page hidden">
                 <div class="connexion-title" id="cover-connexion-title">Outdoor<br>Explorer</div>
                 <div class="connexion-subtitle" id="connexion-subtitle">LES SPORTS PLEIN AIR</div>
 
@@ -42,62 +45,41 @@
 
             <!-- structure de l'affichage des sports -->
             <div class="left-page">
-                <div class="sport-name">récupérer le nom du sport dans json</div>
-                <img class="illustration " src="recuperer lien dans le json" alt="récupérer l'alt dans json">
-                <div class="description " id="description">Récupérer infos json</div>
+                <div class="sport-name" id="sport"></div>
+                <img class="illustration" id="illustration" src="" alt="">
+                <div class="description " id="description"></div>
 
-                <img src="recupérer le badge dans le json" alt="récupérer l'alt dans json">
+                <img class="badge" id="badge" src="" alt="Reward of the sport">
 
-                <button class="game" id="game" onclick="récupérer le jeu sur le json"></button>
+                <button class="game" id="game" ></button>
             </div>
 
-            <div class="right-page ">
-                <div class="resume">
-                    <p>Résumé : </p>
-                    <p>Récupérer resumé dans json</p>
+            <div class="right-page sport-page">
+                <div class="game-not-done" id="game-not-done">Déverrouillez les informations en jouant au mini-jeu !</div>
+
+                <div class="confidential">
+                    <div class="resume" id = "resume"></div>
+
+                    <div class="tips" id = "tips"></div>
+
+                    <div class="club-link" id="club"></div>
+
+                    <div class="material" id="material"></div>
+
+                    <div class="cost" id="cost"></div>
+
+                    <div class="benefits" id="benefits"></div>
+
+                    <div class="season" id="season"></div>
                 </div>
 
-                <div class="resume">
-                    <p>Résumé : </p>
-                    <p>Récupérer resumé dans json</p>
-                </div>
-
-                <div class="tips">
-                    <p>Conseils pour les débutants : </p>
-                    <p>Récupérer conseils dans json</p>
-                </div>
-
-                <div class="club-link">
-                    <p>Si tu veux rejoindre un club, voici le lien : </p>
-                    <p>Récupérer lien dans json</p>
-                </div>
-
-                <div class="material">
-                    <p>Voici ce dont tu as besoin pour faire ce sport : </p>
-                    <p>Récupérer matos dans json</p>
-                </div>
-
-                <div class="cost">
-                    <p>Les coûts à prévoir pour ce sport : </p>
-                    <p>Récupérer cout dans json</p>
-                </div>
-
-                <div class="benefits">
-                    <p>Les avantages de pratiquer ce sport : </p>
-                    <p>Récupérer bienfaits dans json</p>
-                </div>
-
-                <div class="season">
-                    <p>Saison idéale : </p>
-                    <p>Récupérer saison dans json</p>
-                </div>
             </div>
 
 
         </div>
     </div>
 
-    <button class="btn-open" id="btnOpen" onclick="openBook()">
+    <button class="btn-open hidden" id="btnOpen" onclick="openBook()">
         Ouvrir le livre
     </button>
 

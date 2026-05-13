@@ -1,12 +1,87 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const rings = document.getElementById('rings');
+// const material = document.getElementById('material');
+// const cost = document.getElementById('cost');
+// const benefits = document.getElementById('benefits');
+// const season = document.getElementById('season');
 
-    for (let i = 0; i < 20; i++) {
-        const ring = document.createElement('div');
-        ring.className = 'ring';
-        rings.appendChild(ring);
+let current_page = 0
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Pour les anneaux du livre
+    const rings = document.getElementById('rings');
+    if (rings) {
+        for (let i = 0; i < 20; i++) {
+            const ring = document.createElement('div');
+            ring.className = 'ring';
+            rings.appendChild(ring);
+        }
+    }
+
+    // Pour afficher toutes les informations du json
+    if (typeof sports !== 'undefined') {
+        let sport = sports[current_page]
+        if(sport) {
+            const sport_name = document.getElementById('sport');
+            if (sport_name) {
+                sport_name.innerHTML = sport.name;
+            }
+
+            const illustration = document.getElementById('illustration');
+            if (illustration) {
+                illustration.src = sport.image;
+                illustration.alt = sport.alt;
+            }
+
+            const description = document.getElementById('description');
+            if(description) {
+                description.innerHTML = sport.description;
+            }
+
+            const game = document.getElementById('game');
+            if (game) {
+                game.onClik = sport.miniJeu;
+            }
+
+            const resume = document.getElementById('resume');
+            if (resume) {
+                resume.innerHTML = sport.infos.resume;
+            }
+
+            const tips = document.getElementById('tips');
+            if (tips) {
+                tips.innerHTML = sport.infos.conseilsDebutant
+            }
+
+            const club = document.getElementById('club');
+            if (club) {
+                club.innerHTML=sport.infos.lienClub
+            }
+
+            const material = document.getElementById('material');
+            if(material) {
+                material.innerHTML = sport.infos.materiel
+            }
+
+            const cost = document.getElementById('cost');
+            if (cost) {
+                cost.innerHTML = sport.infos.cout
+            }
+
+            const benefits = document.getElementById('benefits');
+            if (benefits) {
+                benefits.innerHTML = sport.infos.bienfaits
+            }
+
+            const season = document.getElementById('season');
+            if (season) {
+                season.innerHTML = sport.infos.saisonIdeale
+            }
+        }
+
+    } else {
+        console.error("Sports.js is not available");
     }
 });
+
 
 let isOpen = false;
 

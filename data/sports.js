@@ -1,6 +1,4 @@
-{
-  "sports" : [
-
+const sports = [
     {
       "name": "Ski alpin",
       "image": "assets/illustrations/ski.jpg",
@@ -76,9 +74,7 @@
       },
       "miniJeu": "../js/games/veloRoute.js"
     }
-
-  ]
-}
+    ]
 
 
 

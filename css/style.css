@@ -93,7 +93,7 @@ body{
     transform: translateZ(2px);
 }
 
-.btn-open{
+button{
     background-color: #dabe12;
     border: none;
     padding : 15px 70px;
@@ -105,7 +105,7 @@ body{
     font-family: 'Playfair Display', serif;
 }
 
-.btn-open:hover{
+button:hover{
     background-color: #e1c616;
     box-shadow: 4px 4px 4px #000;
 }
@@ -199,19 +199,10 @@ body{
 }
 
 .connexion-form button{
-    background-color: #dabe12;
-    border: none;
-    color: #fff;
-    height:30px ;
+    height:30px;
     width: 120px;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.connexion-form button:hover{
-    background-color: #e1c616;
-    box-shadow: 4px 4px 4px #000;
+    font-size: 14px;
+    padding : 0;
 }
 
 .sport-page{
@@ -245,6 +236,13 @@ body{
 .left-page .illustration{
     height: 40%;
     width: 95%;
+}
+
+.left-page button{
+    height:45px;
+    width: 150px;
+    font-size: 14px;
+    padding : 0;
 }
 
 

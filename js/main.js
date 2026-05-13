@@ -36,10 +36,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 description.innerHTML = sport.description;
             }
 
-            const game = document.getElementById('game');
-            if (game) {
-                game.onClik = sport.miniJeu;
-            }
+            const gameBtn = document.getElementById('game');
+
+            gameBtn.addEventListener('click', () => {
+                const scriptPath = sport.miniJeu;
+
+                const script = document.createElement('script');
+                script.src = scriptPath;
+                document.body.appendChild(script);
+            });
 
             const resume = document.getElementById('resume');
             if (resume) {

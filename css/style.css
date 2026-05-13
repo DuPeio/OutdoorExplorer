@@ -1,4 +1,8 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body{
     background-color: #C8C4B8;
@@ -14,8 +18,8 @@ body{
 
 .scene {
     perspective: 1400px;
-    width: 1100px;
-    height: 850px;
+    width: 1000px;
+    height: 750px;
     position: relative;
 }
 
@@ -205,17 +209,78 @@ button:hover{
     padding : 0;
 }
 
+/*Page de droite*/
 .sport-page{
     justify-content: space-evenly;
+
+}
+
+.game-not-done{
+    color: #dabe12;
+    font-weight: bold;
+}
+
+.game-not-done.hidden{
+    display: none;
+}
+
+.informations-container{
+    position: relative;
+    width: 100%;
 }
 
 .confidential{
-    filter :blur(4px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(4px);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    cursor:not-allowed;
 }
 
+.confidential.hidden{
+    display:none;
+}
+
+.informations{
+    display: flex;
+    flex-direction: column;
+    font-size: 11px;
+    text-align: center;
+}
+
+.informations div{
+    padding: 5px 5px 20px 5px;
+}
+
+.informations h4{
+    font-family: 'Playfair Display', serif;
+    color: #DABE12;
+}
+
+.club-link ul{
+    list-style-position: inside;
+}
+.material-benefits{
+    display: flex;
+}
+
+.material-benefits div{
+    padding-bottom : 0;
+}
+
+/*Spécifique escalade*/
+.resume ul{
+    padding-top: 10px;
+    gap: 18px;
+    display: flex;
+    list-style: none;
+    font-size: 11px;
+}
+
+/*Page de gauche*/
 .left-page{
     position: absolute;
     background-color: #FFFCE5;
@@ -249,9 +314,6 @@ button:hover{
 .badge{
     width: 25%;
     transform: rotate(30deg);
-    position : absolute;
-    left: 10px;
-    top: 38%;
 }
 
 .sport-name-container {
@@ -264,7 +326,7 @@ button:hover{
     align-items: center;
     background-size: cover;
     background-position: center;
-    margin-top: -120px;
+    margin-top: -60px;
 }
 
 .sport-name {
@@ -287,6 +349,7 @@ button:hover{
     background-clip: text;
     color: transparent;
     filter: invert(1);
+    transition: 0.3s;
 }
 
 .description{

@@ -1,4 +1,4 @@
-let current_page = 1
+let current_page = 0
 document.addEventListener('DOMContentLoaded', () => {
     // Pour les anneaux du livre
     const rings = document.getElementById('rings');
@@ -21,6 +21,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 sport_name.style.backgroundImage = `url(${sport.image})`;
                 sport_name_container.style.backgroundImage = `url(${sport.image})`;
             }
+
+            sport_name_container.addEventListener('mouseover', () => {
+                sport_name.style.color = '#dabe12';
+                sport_name.style.fontSize = '500%';
+                sport_name.style.filter='invert(0)';
+            })
+
+            sport_name_container.addEventListener('mouseout', () => {
+                sport_name.style.color = 'transparent';
+                sport_name.style.fontSize = '450%';
+                sport_name.style.filter='invert(1)'
+            })
 
             const illustration = document.getElementById('illustration');
             if (illustration) {
@@ -55,7 +67,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const club = document.getElementById('club');
             if (club) {
-                club.innerHTML=sport.infos.lienClub
+                if(sport.infos.lienClub.length > 1){
+                    const newUl = document.createElement('ul');
+                    club.appendChild(newUl);
+
+                    for(let link in sport.infos.lienClub) {
+                        const newLi = document.createElement('li');
+                        const newA = document.createElement('a');
+                        newA.textContent = sport.infos.lienClub[link];
+                        newA.href = sport.infos.lienClub[link];
+                        newA.target = "_blank";
+                        newLi.appendChild(newA);
+                        newUl.appendChild(newLi);
+                    }
+                }else{
+                    const newA = document.createElement('a');
+                    newA.innerHTML = sport.infos.lienClub[0];
+                    newA.href = sport.infos.lienClub[0];
+                    club.appendChild(newA);
+                }
             }
 
             const material = document.getElementById('material');
@@ -80,7 +110,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const badge = document.getElementById('badge');
             if(badge) {
-                badge.src = sport.badge
+                // If réussite du mini jeu
+                // badge.src = sport.badge
+                // badge.title = `Woaw quel beau badge !\nRegarde les informations liées au ${sport.name}.`
+                // Else
+                badge.src = sport.emplacement
+                badge.title = "Gagne ce badge en jouant au mini-jeu !"
+
             }
         }
 

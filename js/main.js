@@ -1,4 +1,4 @@
-let current_page = 3
+let current_page = 1
 document.addEventListener('DOMContentLoaded', () => {
     // Pour les anneaux du livre
     const rings = document.getElementById('rings');

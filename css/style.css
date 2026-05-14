@@ -131,6 +131,13 @@ button:hover{
     align-items: center;
     justify-content: center;
     border: #4e1801 3px dashed;
+    cursor: pointer;
+    transition: 1s;
+    transform-origin: right center;
+}
+
+.back-front-page.hidden{
+    display: none;
 }
 
 .right-page{
@@ -402,4 +409,11 @@ button:hover{
     transform: rotateY(180deg);
 }
 
+.flipping-forward {
+    z-index: 0;
+    transform: rotateY(-180deg);
+}
 
+.flipping-backward {
+    transform: rotateY(180deg);
+}

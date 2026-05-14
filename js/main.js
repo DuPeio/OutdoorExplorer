@@ -1,6 +1,7 @@
 let current_page = 0;
 let current_sport = 0;
 let is_connected = false;
+let is_animating = false;
 
 function updateSportDisplay(){
     if (typeof sports !== 'undefined') {
@@ -141,25 +142,56 @@ function openBook() {
     current_page++;
 }
 
-//Derrière de couverture
-const backPage = document.getElementById('backPage');
-backPage.addEventListener('click', (e) => {
-    alert("Fermeture du livre");
-})
-
-const button = document.getElementById('connexionSubmit');
-button.addEventListener('click', (e) => {
-    e.stopPropagation();
-});
-
-
 //Page connexion
 const connexionPage = document.getElementById('connexionPage');
 connexionPage.addEventListener('click', (e) => {
     if(!is_connected){
-        alert("Connextion obligatoire pour aller à la page suivante.");
+        alert("Connexion obligatoire pour aller à la page suivante.");
+    }else{
+        console.log(current_page)
     }
 })
+
+const frontPage = document.querySelector('.front-page');
+frontPage.addEventListener('click', ()=>{
+    if(current_page === 0){
+        current_page++;
+    //     Animation de l'ouverture du livre
+        document.getElementById('cover-title').classList.add('hidden');
+        document.getElementById('img-front-page').classList.add('hidden');
+        connexionPage.classList.remove('hidden');
+        backPage.classList.remove('hidden');
+    }
+});
+
+//Derrière de couverture
+const backPage = document.getElementById('backPage');
+backPage.addEventListener('click', (e) => {
+    is_animating = true;
+
+    backPage.classList.add('flipping-backward');
+
+    setTimeout(() => {
+        current_page = 0;
+    }, 350);
+
+    setTimeout(() => {
+        backPage.classList.remove('flipping-backward');
+        backPage.classList.add('hidden');
+        document.getElementById('cover-title').classList.remove('hidden');
+        document.getElementById('img-front-page').classList.remove('hidden');
+        connexionPage.classList.add('hidden');
+        is_animating = false;
+    }, 700);
+
+});
+
+const form = document.getElementById('connexionForm');
+form.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
+
+
 
 // Page droite
 const rightPage=document.getElementById("rightPage");
@@ -172,6 +204,5 @@ const leftPage=document.getElementById("leftPage");
 leftPage.addEventListener("click", function () {
     alert("page gauche")
 })
-
 
 

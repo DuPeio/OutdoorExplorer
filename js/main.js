@@ -1,21 +1,26 @@
-let current_page = 0
-document.addEventListener('DOMContentLoaded', () => {
-    // Pour les anneaux du livre
-    const rings = document.getElementById('rings');
-    if (rings) {
-        for (let i = 0; i < 18; i++) {
-            const ring = document.createElement('div');
-            ring.className = 'ring';
-            rings.appendChild(ring);
-        }
-    }
+let current_page = 0;
+let current_sport = 0;
+let is_connected = false;
 
-    // Pour afficher toutes les informations du json
+function updateSportDisplay(){
     if (typeof sports !== 'undefined') {
-        let sport = sports[current_page]
+        let sport = sports[current_sport]
         if(sport) {
+            // Tout les éléments nécessaires
             const sport_name = document.getElementById('sport');
             const sport_name_container = document.getElementById('container');
+            const illustration = document.getElementById('illustration');
+            const description = document.getElementById('description');
+            const gameBtn = document.getElementById('game');
+            const resume = document.getElementById('resume');
+            const tips = document.getElementById('tips');
+            const club = document.getElementById('club');
+            const material = document.getElementById('material');
+            const cost = document.getElementById('cost');
+            const benefits = document.getElementById('benefits');
+            const season = document.getElementById('season');
+            const badge = document.getElementById('badge');
+
             if (sport_name && sport_name_container) {
                 sport_name.innerHTML = sport.name;
                 sport_name.style.backgroundImage = `url(${sport.image})`;
@@ -34,18 +39,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 sport_name.style.filter='invert(1)'
             })
 
-            const illustration = document.getElementById('illustration');
             if (illustration) {
                 illustration.src = sport.image;
                 illustration.alt = sport.alt;
             }
 
-            const description = document.getElementById('description');
             if(description) {
                 description.innerHTML = sport.description;
             }
-
-            const gameBtn = document.getElementById('game');
 
             gameBtn.addEventListener('click', () => {
                 const scriptPath = sport.miniJeu;
@@ -55,18 +56,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.appendChild(script);
             });
 
-            const resume = document.getElementById('resume');
             if (resume) {
                 resume.innerHTML = sport.infos.resume;
             }
 
-            const tips = document.getElementById('tips');
+
             if (tips) {
                 tips.innerHTML = sport.infos.conseilsDebutant
             }
 
-            const club = document.getElementById('club');
             if (club) {
+                club.innerHTML = "Si tu veux plus <b>d'informations</b> pour pratiquer rends-toi sur ce(s) lien(s) : ";
                 if(sport.infos.lienClub.length > 1){
                     const newUl = document.createElement('ul');
                     club.appendChild(newUl);
@@ -88,27 +88,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            const material = document.getElementById('material');
             if(material) {
                 material.innerHTML = sport.infos.materiel
             }
 
-            const cost = document.getElementById('cost');
             if (cost) {
                 cost.innerHTML = sport.infos.cout
             }
 
-            const benefits = document.getElementById('benefits');
             if (benefits) {
                 benefits.innerHTML = sport.infos.bienfaits
             }
 
-            const season = document.getElementById('season');
             if (season) {
                 season.innerHTML = sport.infos.saisonIdeale
             }
 
-            const badge = document.getElementById('badge');
             if(badge) {
                 // If réussite du mini jeu
                 // badge.src = sport.badge
@@ -116,15 +111,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Else
                 badge.src = sport.emplacement
                 badge.title = "Gagne ce badge en jouant au mini-jeu !"
-
             }
         }
-
     } else {
         console.error("Sports.js is not available");
     }
-});
+}
 
+document.addEventListener('DOMContentLoaded', () => {
+    const rings = document.getElementById('rings');
+    if (rings) {
+        for (let i = 0; i < 18; i++) {
+            const ring = document.createElement('div');
+            ring.className = 'ring';
+            rings.appendChild(ring);
+        }
+    }
+    updateSportDisplay();
+
+});
 
 let isOpen = false;
 
@@ -133,4 +138,40 @@ function openBook() {
     isOpen = true;
     document.getElementById('cover-title').classList.add('hidden');
     document.getElementById('img-front-page').classList.add('hidden');
+    current_page++;
 }
+
+//Derrière de couverture
+const backPage = document.getElementById('backPage');
+backPage.addEventListener('click', (e) => {
+    alert("Fermeture du livre");
+})
+
+const button = document.getElementById('connexionSubmit');
+button.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
+
+
+//Page connexion
+const connexionPage = document.getElementById('connexionPage');
+connexionPage.addEventListener('click', (e) => {
+    if(!is_connected){
+        alert("Connextion obligatoire pour aller à la page suivante.");
+    }
+})
+
+// Page droite
+const rightPage=document.getElementById("rightPage");
+rightPage.addEventListener("click", function () {
+    alert("page droite");
+})
+
+// Page gauche
+const leftPage=document.getElementById("leftPage");
+leftPage.addEventListener("click", function () {
+    alert("page gauche")
+})
+
+
+

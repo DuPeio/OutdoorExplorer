@@ -155,8 +155,8 @@ button:hover{
     background-color: #FFFCE5;
     border-radius: 15px;
     z-index: 5;
-    /*padding : 25px;*/
-    /*display: flex;*/
+    padding : 25px;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -308,6 +308,7 @@ button:hover{
 .game-not-done{
     color: #dabe12;
     font-weight: bold;
+    padding: 20px;
 }
 
 .game-not-done.hidden{
@@ -316,7 +317,12 @@ button:hover{
 
 .informations-container{
     position: relative;
-    width: 100%;
+    width: 90%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .confidential{
@@ -327,7 +333,6 @@ button:hover{
     width: 100%;
     height: 100%;
     z-index: 10;
-    cursor:not-allowed;
 }
 
 .confidential.hidden{
@@ -369,36 +374,6 @@ button:hover{
     list-style: none;
     font-size: 11px;
 }
-
-/*Page de gauche*/
-/*.left-page{*/
-/*    position: absolute;*/
-/*    background-color: #FFFCE5;*/
-/*    border-radius: 15px;*/
-/*    z-index: 2;*/
-/*    transform: translateZ(1px);*/
-/*    padding : 25px;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    align-items: center;*/
-/*    justify-content: space-evenly;*/
-/*    overflow: hidden;*/
-/*}*/
-
-
-
-.left-page button{
-    height:45px;
-    width: 150px;
-    font-size: 14px;
-    padding : 0;
-}
-
-.left-page.hidden{
-    display: none;
-}
-
-
 
 
 .flipping-forward {

@@ -52,12 +52,19 @@ function updateSportDisplay(){
                 description.innerHTML = sport.description;
             }
 
-            gameBtn.addEventListener('click', () => {
+            gameBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
                 const scriptPath = sport.miniJeu;
 
-                const script = document.createElement('script');
-                script.src = scriptPath;
-                document.body.appendChild(script);
+                let scriptGame = document.getElementById('gameScript')
+                if(scriptGame) {
+                    scriptGame.remove();
+                }
+                console.log("ggod")
+                scriptGame = document.createElement('script');
+                scriptGame.id="gameScript";
+                scriptGame.src = scriptPath;
+                document.body.appendChild(scriptGame);
             });
 
             if (resume) {

@@ -166,6 +166,10 @@ button:hover{
     cursor: pointer;
 }
 
+.page.flipping-forward .front{
+    pointer-events: none;
+}
+
 .page.hidden{
     display: none;
 }

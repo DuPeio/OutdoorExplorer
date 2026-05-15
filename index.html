@@ -27,27 +27,13 @@
                 <div class="back face"></div>
             </div>
 
-<!--            Quatrieme de couverture-->
-
+            <!--Quatrieme de couverture-->
             <div class="cover last-cover" id="lastCover">
             </div>
 
-            <div class="page connexion" id="page">
-
+            <!--Page-->
+            <div class="page connexion hidden" id="page">
                 <div class="front face">
-
-                </div>
-                <div class="back face">
-
-                </div>
-
-
-
-            <!-- Derrière de couverture & première page -->
-            <div class="back-front-page hidden" id="backPage"></div>
-
-            <div class="page-wrapper right hidden" id="connexionPage">
-                <div class="page-face front right-page" >
                     <div class="connexion-title" id="cover-connexion-title">Outdoor<br>Explorer</div>
                     <div class="connexion-subtitle" id="connexion-subtitle">LES SPORTS PLEIN AIR</div>
 
@@ -60,6 +46,32 @@
                             </p>
                             <button class="connexion-submit" id="connexionSubmit">Connexion</button>
                         </form>
+                </div>
+
+
+                <div class="back face">
+                    <div class="sport-name-container" id="container">
+                        <div class="sport-name" id="sport"></div>
+                    </div>
+
+                    <div class="description " id="description"></div>
+
+                    <!--A changer en fonction de la réussite du mini jeu-->
+                    <img class="badge" id="badge" src="" alt="Reward of the sport">
+
+                    <button class="game-btn" id="game">Lancer le mini jeu</button>
+                </div>
+
+            </div>
+
+
+
+            <!-- Derrière de couverture & première page -->
+            <div class="back-front-page hidden" id="backPage"></div>
+
+            <div class="page-wrapper right hidden" id="connexionPage">
+                <div class="page-face front right-page" >
+
                     </div>
                 </div>
             </div>
@@ -67,17 +79,7 @@
             <!-- structure de l'affichage des sports -->
             <div class="page-wrapper left hidden" id="leftPage">
                 <div class="page-face front left-page">
-                    <div class="sport-name-container" id="container">
-                        <div class="sport-name" id="sport"></div>
-                    </div>
 
-                    <!--                <img class="illustration" id="illustration" src="" alt="">-->
-                    <div class="description " id="description"></div>
-
-                    <!--                A changer en fonction de la réussite du mini jeu-->
-                    <img class="badge" id="badge" src="" alt="Reward of the sport">
-
-                    <button class="game-btn" id="game">Lancer le mini jeu</button>
                 </div>
             </div>
 

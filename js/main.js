@@ -1,6 +1,6 @@
 let current_page = 0;
 let current_sport = 0;
-let is_connected = false;
+let is_connected = true;
 let is_animating = false;
 let number_of_sports = sports.length;
 
@@ -135,33 +135,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 let isOpen = false;
 
-function openBook() {
-    if (isOpen)return;
-    isOpen = true;
-    document.getElementById('cover-title').classList.add('hidden');
-    document.getElementById('img-front-page').classList.add('hidden');
-    current_page++;
-}
 
-//Page connexion
-const connexionPage = document.getElementById('connexionPage');
-connexionPage.addEventListener('click', (e) => {
-    if(!is_connected){
-        alert("Connexion obligatoire pour aller à la page suivante.");
-    }else{
-        console.log(current_page)
-    }
-})
-
+//Couverture et 4eme de couverture
 const cover = document.getElementById('cover');
 cover.addEventListener('click', ()=>{
     if(current_page === 0){
         cover.classList.add('flipping-forward');
-        current_page++;
+        setTimeout(() => {
+            current_page++;
+            page.classList.remove('hidden');
+        }, 150);
     }
     else if(current_page === 1){
-        current_page--;
         cover.classList.remove('flipping-forward');
+        setTimeout(() => {
+            current_page--;
+            page.classList.add('hidden');
+        }, 350);
     }
 });
 
@@ -170,35 +160,40 @@ lastCover.addEventListener('click', ()=>{
     console.log(current_page)
     if(current_page === number_of_sports+1){
         lastCover.classList.add('flipping-forward');
-        current_page++;
+        setTimeout(() => {
+            current_page++;
+            page.classList.add('hidden');
+            lastCover.style.zIndex = 1;
+        }, 150);
     }
     else if(current_page === number_of_sports+2){
-        current_page--;
+        setTimeout(() => {
+            current_page--;
+            page.classList.remove('hidden');
+            lastCover.style.zIndex = -10;
+        }, 350);
         lastCover.classList.remove('flipping-forward');
+    }
+    else{
+        console.log(current_page)
+        current_page++;
     }
 });
 
-//Derrière de couverture
-const backPage = document.getElementById('backPage');
-backPage.addEventListener('click', (e) => {
-    is_animating = true;
+//Page de connexion
+const page = document.getElementById('page');
+page.addEventListener('click', (e) => {
+    if(!is_connected){
+        alert("Connexion obligatoire pour aller à la page suivante.");
+    }else if(is_connected){
+        page.classList.add('flipping-forward');
+        current_page++;
+    }else{
+        current_page--;
+        page.classList.remove('flipping-forward');
+    }
+})
 
-    backPage.classList.add('flipping-backward');
-
-    setTimeout(() => {
-        current_page = 0;
-    }, 350);
-
-    setTimeout(() => {
-        backPage.classList.remove('flipping-backward');
-        backPage.classList.add('hidden');
-        document.getElementById('cover-title').classList.remove('hidden');
-        document.getElementById('img-front-page').classList.remove('hidden');
-        connexionPage.classList.add('hidden');
-        is_animating = false;
-    }, 700);
-
-});
 
 const form = document.getElementById('connexionForm');
 form.addEventListener('click', (e) => {

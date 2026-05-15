@@ -152,15 +152,16 @@ connexionPage.addEventListener('click', (e) => {
     }
 })
 
-const frontPage = document.querySelector('.front-page');
-frontPage.addEventListener('click', ()=>{
+const cover = document.getElementById('cover');
+cover.addEventListener('click', ()=>{
+    console.log(current_page);
     if(current_page === 0){
+        cover.classList.add('flipping-forward');
         current_page++;
-    //     Animation de l'ouverture du livre
-        document.getElementById('cover-title').classList.add('hidden');
-        document.getElementById('img-front-page').classList.add('hidden');
-        connexionPage.classList.remove('hidden');
-        backPage.classList.remove('hidden');
+    }
+    else if(current_page === 1){
+        current_page--;
+        cover.classList.remove('flipping-forward');
     }
 });
 

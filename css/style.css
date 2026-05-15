@@ -31,6 +31,19 @@ body{
 }
 
 .front-page{
+
+}
+
+.card {
+    width: 200px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    transform-origin: right; /* Ton pivot à droite */
+}
+
+.cover{
     position: absolute;
     background-color: #741F00;
     right: 0;
@@ -43,9 +56,22 @@ body{
     align-items: center;
     justify-content: center;
     border: #4e1801 3px dashed;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    transform-origin: left;
 }
 
+.face{
+    backface-visibility: hidden;
+}
 
+.front{
+}
+
+.back{
+    transform: rotateY(180deg);
+}
 
 .cover-title {
     font-family: 'Playfair Display', serif;

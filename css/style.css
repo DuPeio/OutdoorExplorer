@@ -63,6 +63,9 @@ body{
 }
 
 .front{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .back{
@@ -165,6 +168,14 @@ button:hover{
 
 .back.hidden{
     display: none;
+}
+
+.connexion-container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /*Pour la partie connexion*/

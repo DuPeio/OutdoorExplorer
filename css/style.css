@@ -59,7 +59,10 @@ body{
 }
 
 .face{
-    backface-visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility:hidden;
 }
 
 .front{
@@ -70,6 +73,9 @@ body{
 
 .back{
     transform: rotateY(180deg);
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .cover-title {
@@ -148,8 +154,8 @@ button:hover{
     background-color: #FFFCE5;
     border-radius: 15px;
     z-index: 5;
-    padding : 25px;
-    display: flex;
+    /*padding : 25px;*/
+    /*display: flex;*/
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -161,10 +167,6 @@ button:hover{
 }
 
 .page.hidden{
-    display: none;
-}
-
-.back.hidden{
     display: none;
 }
 
@@ -232,10 +234,70 @@ button:hover{
     padding : 0;
 }
 
+/*Page de gauche sport*/
+.sport-container{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.sport-name-container {
+    container-type: inline-size;
+    height: 45%;
+    width: 120%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    margin-top: -60px;
+}
+
+.sport-name {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 450%;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 8px;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: invert(1);
+    transition: 0.3s;
+}
+
+.description{
+    padding : 30px;
+    justify-content: center;
+    text-align: center;
+}
+
+.badge{
+    width: 25%;
+    transform: rotate(30deg);
+}
+
 /*Page de droite*/
 .sport-page{
     justify-content: space-evenly;
-
 }
 
 .game-not-done{
@@ -304,24 +366,21 @@ button:hover{
 }
 
 /*Page de gauche*/
-.left-page{
-    position: absolute;
-    background-color: #FFFCE5;
-    border-radius: 15px;
-    z-index: 2;
-    transform: translateZ(1px);
-    padding : 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    overflow: hidden;
-}
+/*.left-page{*/
+/*    position: absolute;*/
+/*    background-color: #FFFCE5;*/
+/*    border-radius: 15px;*/
+/*    z-index: 2;*/
+/*    transform: translateZ(1px);*/
+/*    padding : 25px;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    justify-content: space-evenly;*/
+/*    overflow: hidden;*/
+/*}*/
 
-.left-page .illustration{
-    height: 40%;
-    width: 95%;
-}
+
 
 .left-page button{
     height:45px;
@@ -334,52 +393,8 @@ button:hover{
     display: none;
 }
 
-.badge{
-    width: 25%;
-    transform: rotate(30deg);
-}
 
-.sport-name-container {
-    container-type: inline-size;
-    height: 45%;
-    width: 120%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    margin-top: -60px;
-}
 
-.sport-name {
-    width: 100%;
-    height: 100%;
-    padding-bottom: 180px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Anton', sans-serif;
-    font-size: 450%;
-    text-transform: uppercase;
-    font-weight: 900;
-    line-height: 1;
-    letter-spacing: 8px;
-    text-align: center;
-    background-size: cover;
-    background-position: center;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    filter: invert(1);
-    transition: 0.3s;
-}
-
-.description{
-    padding : 30px;
-    justify-content: center;
-    text-align: center;
-}
 
 .flipping-forward {
     transform: rotateY(-180deg);

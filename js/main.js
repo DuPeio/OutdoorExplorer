@@ -5,13 +5,15 @@ let is_animating = false;
 let number_of_sports = sports.length;
 
 function updateSportDisplay(){
+
     if (typeof sports !== 'undefined') {
         let sport = sports[current_sport]
         if(sport) {
+
             // Tout les éléments nécessaires
             const sport_name = document.getElementById('sport');
             const sport_name_container = document.getElementById('container');
-            const illustration = document.getElementById('illustration');
+            // const illustration = document.getElementById('illustration');
             const description = document.getElementById('description');
             const gameBtn = document.getElementById('game');
             const resume = document.getElementById('resume');
@@ -41,10 +43,10 @@ function updateSportDisplay(){
                 sport_name.style.filter='invert(1)'
             })
 
-            if (illustration) {
-                illustration.src = sport.image;
-                illustration.alt = sport.alt;
-            }
+            // if (illustration) {
+            //     illustration.src = sport.image;
+            //     illustration.alt = sport.alt;
+            // }
 
             if(description) {
                 description.innerHTML = sport.description;
@@ -186,16 +188,20 @@ page.addEventListener('click', (e) => {
     if(!is_connected){
         alert("Connexion obligatoire pour aller à la page suivante.");
     }else if(is_connected && current_page === 1){
+        // updateSportDisplay();
         page.classList.add('flipping-forward');
-        current_page++;
-        page.style.right= "35px";
-        updateSportDisplay()
 
+        setTimeout(()=>{
+            page.style.right= "35px";
+            current_page++;
+        }, 150)
     }else if(current_page === 2){
-        current_page--;
-        page.style.right= "23px";
         page.classList.remove('flipping-forward');
-        updateSportDisplay()
+        setTimeout(()=>{
+            page.style.right= "23px";
+            current_page--;
+        }, 150)
+        updateSportDisplay();
     }
 })
 

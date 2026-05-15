@@ -15,7 +15,7 @@
 <body>
 
     <div class="scene">
-        <div class="book">
+        <div class="book" id="book">
             <div class="rings" id="rings"></div>
 
             <!-- Couverture -->
@@ -32,20 +32,20 @@
             </div>
 
             <!--Page-->
-            <div class="page hidden" id="page">
+            <div class="page hidden" id="page0">
                 <div class="front face">
-                    <div class="connexion-container" id="connexion-container">
-                        <div class="connexion-title" id="cover-connexion-title">Outdoor<br>Explorer</div>
-                        <div class="connexion-subtitle" id="connexion-subtitle">LES SPORTS PLEIN AIR</div>
+                    <div class="connexion-container" id="connexion-container0">
+                        <div class="connexion-title" id="cover-connexion-title0">Outdoor<br>Explorer</div>
+                        <div class="connexion-subtitle" id="connexion-subtitle0">LES SPORTS PLEIN AIR</div>
 
                         <div class="connexion-part">
                             <div>Connectez-vous pour vous continuer !</div>
-                            <form class="connexion-form" id="connexionForm">
+                            <form class="connexion-form" id="connexionForm0">
                                 <p>
                                     <img src="assets/icons/user.svg">
-                                    <input class="connexion-input" id="connexion-input" type="text" placeholder="Nom d'utilisateur" required>
+                                    <input class="connexion-input" id="connexion-input0" type="text" placeholder="Nom d'utilisateur" required>
                                 </p>
-                                <button class="connexion-submit" id="connexionSubmit">Connexion</button>
+                                <button class="connexion-submit" id="connexionSubmit0">Connexion</button>
                             </form>
                         </div>
                     </div>
@@ -54,69 +54,19 @@
 
                 <div class="back face">
                     <div class="sport-container">
-                        <div class="sport-name-container" id="container">
-                            <div class="sport-name" id="sport">salut</div>
+                        <div class="sport-name-container" id="container1">
+                            <div class="sport-name" id="sport0"></div>
                         </div>
 
-                        <div class="description " id="description"></div>
+                        <div class="description " id="description1"></div>
 
                         <!--A changer en fonction de la réussite du mini jeu-->
-                        <img class="badge" id="badge" src="" alt="Reward of the sport">
+                        <img class="badge" id="badge1" src="" alt="Reward of the sport">
 
-                        <button class="game-btn" id="game">Lancer le mini jeu</button>
+                        <button class="game-btn" id="game0">Lancer le mini jeu</button>
                     </div>
                 </div>
             </div>
-
-
-
-
-<!--            &lt;!&ndash; structure de l'affichage des sports &ndash;&gt;-->
-<!--            <div class="page-wrapper left hidden" id="leftPage">-->
-<!--                <div class="page-face front left-page">-->
-
-<!--                </div>-->
-<!--            </div>-->
-
-
-
-<!--            <div class="page-wrapper right hidden" id="rightPage">-->
-<!--                <div class="page-face front right-page sport-page ">-->
-<!--                    <div class="game-not-done" id="game-not-done">Déverrouillez les informations en jouant au mini-jeu !</div>-->
-
-<!--                    <div class="informations-container">-->
-<!--                        <div class="confidential hidden" id="confidential"></div>-->
-<!--                        <div class="informations">-->
-<!--                            <div class="resume" id = "resume"></div>-->
-
-<!--                            <div class="season" id="season"></div>-->
-
-<!--                            <h4>Coût de la pratique</h4>-->
-<!--                            <div class="cost" id="cost"></div>-->
-
-<!--                            <div class="material-benefits">-->
-<!--                                <div class="material-container">-->
-<!--                                    <h4>Matériel nécessaire</h4>-->
-<!--                                    <div class="material" id="material"></div>-->
-<!--                                </div>-->
-
-<!--                                <div class="benefits-container">-->
-<!--                                    <h4>Bienfaits</h4>-->
-<!--                                    <div class="benefits" id="benefits"></div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-
-<!--                            <h4>Conseils</h4>-->
-<!--                            <div class="tips" id = "tips"></div>-->
-
-<!--                            <div class="club-link" id="club">Si tu veux plus <b>d'informations</b> pour pratiquer rends-toi sur ce(s) lien(s) : </div>-->
-
-<!--                        </div>-->
-
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
 
         </div>
     </div>

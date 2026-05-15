@@ -164,14 +164,14 @@ lastCover.addEventListener('click', ()=>{
             current_page++;
             page.classList.add('hidden');
             lastCover.style.zIndex = 1;
-        }, 150);
+        }, 350);
     }
     else if(current_page === number_of_sports+2){
         setTimeout(() => {
             current_page--;
             page.classList.remove('hidden');
             lastCover.style.zIndex = -10;
-        }, 350);
+        }, 150);
         lastCover.classList.remove('flipping-forward');
     }
     else{
@@ -185,33 +185,24 @@ const page = document.getElementById('page');
 page.addEventListener('click', (e) => {
     if(!is_connected){
         alert("Connexion obligatoire pour aller à la page suivante.");
-    }else if(is_connected){
+    }else if(is_connected && current_page === 1){
         page.classList.add('flipping-forward');
         current_page++;
-    }else{
+        page.style.right= "35px";
+        updateSportDisplay()
+
+    }else if(current_page === 2){
         current_page--;
+        page.style.right= "23px";
         page.classList.remove('flipping-forward');
+        updateSportDisplay()
     }
 })
-
 
 const form = document.getElementById('connexionForm');
 form.addEventListener('click', (e) => {
     e.stopPropagation();
 });
 
-
-
-// Page droite
-const rightPage=document.getElementById("rightPage");
-rightPage.addEventListener("click", function () {
-    alert("page droite");
-})
-
-// Page gauche
-const leftPage=document.getElementById("leftPage");
-leftPage.addEventListener("click", function () {
-    alert("page gauche")
-})
 
 

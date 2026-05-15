@@ -2,6 +2,7 @@ let current_page = 0;
 let current_sport = 0;
 let is_connected = false;
 let is_animating = false;
+let number_of_sports = sports.length;
 
 function updateSportDisplay(){
     if (typeof sports !== 'undefined') {
@@ -154,7 +155,6 @@ connexionPage.addEventListener('click', (e) => {
 
 const cover = document.getElementById('cover');
 cover.addEventListener('click', ()=>{
-    console.log(current_page);
     if(current_page === 0){
         cover.classList.add('flipping-forward');
         current_page++;
@@ -162,6 +162,19 @@ cover.addEventListener('click', ()=>{
     else if(current_page === 1){
         current_page--;
         cover.classList.remove('flipping-forward');
+    }
+});
+
+const lastCover = document.getElementById('lastCover');
+lastCover.addEventListener('click', ()=>{
+    console.log(current_page)
+    if(current_page === number_of_sports+1){
+        lastCover.classList.add('flipping-forward');
+        current_page++;
+    }
+    else if(current_page === number_of_sports+2){
+        current_page--;
+        lastCover.classList.remove('flipping-forward');
     }
 });
 

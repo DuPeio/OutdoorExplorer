@@ -182,31 +182,32 @@ lastCover.addEventListener('click', () => {
 
 //Page de connexion TODO: Factoriser pour toutes les pages
 const page = document.getElementById('page0');
+let right_page;
 page.addEventListener('click', (e) => {
     if (!is_connected) {
         alert("Connexion obligatoire pour aller à la page suivante.");
     } else if (is_connected && current_page === 1) {
-        document.getElementById("page2").classList.remove('hidden');
-        updateSportDisplay(current_sport);
         page.classList.add('flipping-forward');
-
+        right_page = pageCreation();
+        console.log(right_page);
+        right_page.classList.remove('hidden');
+        updateSportDisplay(current_sport);
         setTimeout(() => {
             page.style.right = "35px";
             current_page++;
-            document.getElementById("page2").classList.remove('hidden');
         }, 150)
     } else if (current_page === 2) {
         page.classList.remove('flipping-forward');
         setTimeout(() => {
             page.style.right = "23px";
             current_page--;
-            document.getElementById("page2").classList.add('hidden');
+            book.removeChild(right_page);
         }, 350)
         updateSportDisplay(current_sport);
     }
 })
 
-const form = document.getElementById('connexionForm1');
+const form = document.getElementById('connexionForm');
 form.addEventListener('click', (e) => {
     e.stopPropagation();
 });
@@ -343,6 +344,8 @@ function pageCreation() {
     newContainer.appendChild(newButton);
 
     book.appendChild(newPage);
+
+    return newPage;
 
 }
 

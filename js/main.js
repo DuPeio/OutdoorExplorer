@@ -94,21 +94,16 @@ function updateSportDisplay(idSport) {
 
             if (material) {
                 material.innerHTML = sport.infos.materiel
-
             }
-
             if (cost) {
                 cost.innerHTML = sport.infos.cout
             }
-
             if (benefits) {
                 benefits.innerHTML = sport.infos.bienfaits
             }
-
             if (season) {
                 season.innerHTML = sport.infos.saisonIdeale
             }
-
             if (badge) {
                 // If réussite du mini jeu
                 // badge.src = sport.badge
@@ -247,6 +242,7 @@ function handlePageFlip(element) {
             current_page--;
             if(current_page+1 <= number_of_sports){
                 setTimeout(() => {
+                    element.style.right="23px";
                     document.getElementById(`page${current_page+1}`).classList.add('hidden');
 
                 },350)
